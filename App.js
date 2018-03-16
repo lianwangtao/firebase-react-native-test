@@ -13,8 +13,8 @@ export default class App extends React.Component {
     this.state = { isLoading: true }
   }
 
-  async getFireBaseContent() {
-    database.ref().once('value').then(async (snapshot) => {
+  getFireBaseContent() {
+    database.ref().once('value').then((snapshot) => {
       console.log('Snapshot: ', snapshot.val()["Today"])
       this.setState({
         content: snapshot.val()["Today"],
